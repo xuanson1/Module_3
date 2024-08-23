@@ -1,7 +1,7 @@
-package com.example.final_module_3.services;
+package com.example.case_module_3.services;
 
-import com.example.final_module_3.entity.PaymentType;
-import com.example.final_module_3.models.PaymentTypeModel;
+import com.example.case_module_3.entity.PaymentType;
+import com.example.case_module_3.models.PaymentTypeModel;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

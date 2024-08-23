@@ -1,9 +1,9 @@
-package com.example.final_module_3.controllers;
+package com.example.case_module_3.controllers;
 
-import com.example.final_module_3.entity.Room;
-import com.example.final_module_3.entity.PaymentType;
-import com.example.final_module_3.services.RoomService;
-import com.example.final_module_3.services.PaymentTypeService;
+import com.example.case_module_3.entity.Room;
+import com.example.case_module_3.entity.PaymentType;
+import com.example.case_module_3.services.RoomService;
+import com.example.case_module_3.services.PaymentTypeService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,10 +13,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Arrays;
-import java.util.Date;
 import java.util.List;
 
 @WebServlet(name = "RoomController", urlPatterns = {"/rooms/*"})
@@ -110,52 +106,4 @@ public class RoomController extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/rooms/view.jsp");
         requestDispatcher.forward(request, response);
     }
-    private boolean validateRoomInput(HttpServletRequest req) {
-        String tenantName = req.getParameter("tenantName");
-        String phoneNumber = req.getParameter("phoneNumber");
-        String startDate = req.getParameter("startDate");
-        String paymentType = req.getParameter("paymentType");
-        String notes = req.getParameter("notes");
-
-        if (tenantName == null || !tenantName.matches("^[a-zA-Z\\s]{5,50}$")) {
-            req.setAttribute("errorMessage", "Tên người thuê trọ không hợp lệ.");
-            return false;
-        }
-
-        if (phoneNumber == null || !phoneNumber.matches("^\\d{10}$")) {
-            req.setAttribute("errorMessage", "Số điện thoại không hợp lệ.");
-            return false;
-        }
-
-        // Kiểm tra Ngày Bắt Đầu Thuê
-        if (startDate == null || !startDate.matches("^\\d{2}-\\d{2}-\\d{4}$")) {
-            req.setAttribute("errorMessage", "Ngày bắt đầu thuê không hợp lệ.");
-            return false;
-        }
-
-        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
-        try {
-            Date startDateParsed = sdf.parse(startDate);
-            if (startDateParsed.before(new Date())) {
-                req.setAttribute("errorMessage", "Ngày bắt đầu thuê không được là ngày quá khứ.");
-                return false;
-            }
-        } catch (ParseException e) {
-            req.setAttribute("errorMessage", "Định dạng ngày không hợp lệ.");
-            return false;
-        }
-
-        if (paymentType == null || !Arrays.asList("monthly", "quarterly", "yearly").contains(paymentType)) {
-            req.setAttribute("errorMessage", "Hình thức thanh toán không hợp lệ.");
-            return false;
-        }
-
-        if (notes != null && notes.length() > 200) {
-            req.setAttribute("errorMessage", "Ghi chú không được vượt quá 200 ký tự.");
-            return false;
-        }
-
-        return true;
-    }
-
 }

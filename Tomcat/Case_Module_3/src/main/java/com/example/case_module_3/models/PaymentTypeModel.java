@@ -1,7 +1,7 @@
-package com.example.final_module_3.models;
+package com.example.case_module_3.models;
 
-import com.example.final_module_3.databases.DatabaseConnect;
-import com.example.final_module_3.entity.PaymentType;
+import com.example.case_module_3.databases.DatabaseConnect;
+import com.example.case_module_3.entity.PaymentType;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

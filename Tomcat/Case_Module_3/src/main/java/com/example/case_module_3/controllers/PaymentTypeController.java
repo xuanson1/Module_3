@@ -1,7 +1,7 @@
 package com.example.case_module_3.controllers;
 
-import com.example.final_module_3.entity.PaymentType;
-import com.example.final_module_3.services.PaymentTypeService;
+import com.example.case_module_3.entity.PaymentType;
+import com.example.case_module_3.services.PaymentTypeService;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;

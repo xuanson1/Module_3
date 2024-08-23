@@ -1,14 +1,12 @@
-package com.example.final_module_3.models;
+package com.example.case_module_3.models;
 
-import com.example.final_module_3.databases.DatabaseConnect;
-import com.example.final_module_3.entity.Room;
+import com.example.case_module_3.databases.DatabaseConnect;
+import com.example.case_module_3.entity.Room;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Date;
-
 
 public class RoomModel {
     private Connection conn;
@@ -43,7 +41,7 @@ public class RoomModel {
         PreparedStatement preparedStatement = this.conn.prepareStatement(sql);
         preparedStatement.setString(1, room.getTenantName());
         preparedStatement.setString(2, room.getPhoneNumber());
-        preparedStatement.setDate(3, java.sql.Date.valueOf(room.getStartDate()));
+        preparedStatement.setDate(3, java.sql.Date.valueOf(room.getStarDate()));
         preparedStatement.setInt(4, room.getPaymentTypeId());
         preparedStatement.setString(5, room.getNotes());
         preparedStatement.execute();
@@ -62,7 +60,6 @@ public class RoomModel {
         preparedStatement.setInt(1, id);
         return preparedStatement.executeQuery();
     }
-
 
 
 }

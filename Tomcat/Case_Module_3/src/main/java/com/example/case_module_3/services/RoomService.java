@@ -1,8 +1,8 @@
-package com.example.final_module_3.services;
+package com.example.case_module_3.services;
 
-import com.example.final_module_3.entity.PaymentType;
-import com.example.final_module_3.entity.Room;
-import com.example.final_module_3.models.RoomModel;
+import com.example.case_module_3.entity.PaymentType;
+import com.example.case_module_3.entity.Room;
+import com.example.case_module_3.models.RoomModel;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -71,7 +71,6 @@ public class RoomService {
         int id = Integer.parseInt(request.getParameter("id"));
         this.roomModel.destroyRoom(id);
     }
-
 
     public void createRoom(HttpServletRequest request, HttpServletResponse response) throws SQLException, ServletException, IOException {
         String tenantName = request.getParameter("tenantName");

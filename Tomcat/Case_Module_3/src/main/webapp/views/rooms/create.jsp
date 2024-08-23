@@ -1,11 +1,12 @@
-<%@ page import="com.example.final_module_3.entity.Room" %>
-<%@ page import="com.example.final_module_3.entity.PaymentType" %>
+<%@ page import="com.example.case_module_3.entity.Room" %>
+<%@ page import="com.example.case_module_3.entity.PaymentType" %>
 <%@ page import="java.util.List" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <% List<PaymentType> paymentTypes = (List<PaymentType>) request.getAttribute("paymentTypes"); %>
+<html>
 <!DOCTYPE html>
-<html lang="vi">
+<html >
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

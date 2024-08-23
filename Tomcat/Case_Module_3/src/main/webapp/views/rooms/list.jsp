@@ -1,8 +1,8 @@
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="com.example.final_module_3.entity.Room" %>
-<%@ page import="com.example.final_module_3.entity.PaymentType" %>
+<%@ page import="com.example.case_module_3.entity.Room" %>
+<%@ page import="com.example.case_module_3.entity.PaymentType" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
@@ -16,8 +16,10 @@
     int totalPage = (int) Math.ceil((double) totalRooms / limit);
     int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
 %>
+
+
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -51,11 +53,11 @@
     <table class="table table-striped table-bordered">
         <thead class="thead-dark">
         <tr>
-            <th>STT</th>
+            <th>#</th>
             <th>Room ID</th>
             <th>Tenant Name</th>
             <th>Phone Number</th>
-            <th>Start Date</th>
+<%--            <th>Start Date</th>--%>
             <th>Payment Type</th>
             <th>Notes</th>
             <th>Actions</th>
@@ -69,10 +71,11 @@
                 <td><c:out value="${room.roomId}"/></td>
                 <td><c:out value="${room.tenantName}"/></td>
                 <td><c:out value="${room.phoneNumber}"/></td>
-                <td><c:out value="${room.startDate}"/></td>
+<%--                <td><c:out value="${room.startDate}"/></td>--%>
                 <td><c:out value="${room.paymentType.paymentTypeName}"/></td>
                 <td><c:out value="${room.notes}"/></td>
                 <td>
+                    <a class="btn btn-warning btn-sm" href="/rooms/update?id=<c:out value="${room.roomId}"/>">Update</a>
                     <a class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete?')" href="/rooms/delete?id=<c:out value="${room.roomId}"/>">Delete</a>
                 </td>
             </tr>

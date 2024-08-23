@@ -1,4 +1,4 @@
-package com.example.final_module_3.entity;
+package com.example.case_module_3.entity;
 
 public class PaymentType {
     private int paymentTypeId;

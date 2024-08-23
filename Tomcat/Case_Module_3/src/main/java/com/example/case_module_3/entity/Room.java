@@ -1,4 +1,4 @@
-package com.example.final_module_3.entity;
+package com.example.case_module_3.entity;
 
 import java.time.LocalDate;
 
@@ -6,16 +6,16 @@ public class Room {
     private int roomId;
     private String tenantName;
     private String phoneNumber;
-    private LocalDate startDate;  // Sửa starDate thành startDate
+    private LocalDate starDate;
     private int paymentTypeId;
     private String notes;
     private PaymentType paymentType;
 
 
-    public Room(String tenantName, String phoneNumber, LocalDate startDate, int paymentTypeId, String notes, PaymentType paymentType) {
+    public Room(String tenantName, String phoneNumber, LocalDate starDate, int paymentTypeId, String notes, PaymentType paymentType) {
         this.tenantName = tenantName;
         this.phoneNumber = phoneNumber;
-        this.startDate = startDate;
+        this.starDate = starDate;
         this.paymentTypeId = paymentTypeId;
         this.notes = notes;
         this.paymentType = paymentType;
@@ -45,12 +45,12 @@ public class Room {
         this.phoneNumber = phoneNumber;
     }
 
-    public LocalDate getStartDate() {
-        return startDate;
+    public LocalDate getStarDate() {
+        return starDate;
     }
 
-    public void setStartDate(LocalDate starDate) {
-        this.startDate = starDate;
+    public void setStarDate(LocalDate starDate) {
+        this.starDate = starDate;
     }
 
     public int getPaymentTypeId() {
