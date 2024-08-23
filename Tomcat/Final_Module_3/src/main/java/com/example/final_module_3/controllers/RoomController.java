@@ -127,7 +127,6 @@ public class RoomController extends HttpServlet {
             return false;
         }
 
-        // Kiểm tra Ngày Bắt Đầu Thuê
         if (startDate == null || !startDate.matches("^\\d{2}-\\d{2}-\\d{4}$")) {
             req.setAttribute("errorMessage", "Ngày bắt đầu thuê không hợp lệ.");
             return false;

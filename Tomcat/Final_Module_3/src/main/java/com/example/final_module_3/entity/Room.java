@@ -6,7 +6,7 @@ public class Room {
     private int roomId;
     private String tenantName;
     private String phoneNumber;
-    private LocalDate startDate;  // Sửa starDate thành startDate
+    private LocalDate startDate;
     private int paymentTypeId;
     private String notes;
     private PaymentType paymentType;

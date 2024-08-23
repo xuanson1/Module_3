@@ -1,4 +1,4 @@
-package com.example.case_module_3.controllers;
+package com.example.final_module_3.controllers;
 
 import com.example.final_module_3.entity.PaymentType;
 import com.example.final_module_3.services.PaymentTypeService;
@@ -81,8 +81,6 @@ public class PaymentTypeController extends HttpServlet {
         RequestDispatcher requestDispatcher = request.getRequestDispatcher("/views/paymenttypes/create.jsp");
         requestDispatcher.forward(request, response);
     }
-
-
 
     public void renderSearchPaymentType(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException, SQLException {
         List<PaymentType> paymentTypes = this.paymentTypeService.searchPaymentTypes(request);

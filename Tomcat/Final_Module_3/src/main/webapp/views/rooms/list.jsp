@@ -1,6 +1,4 @@
 <%@ page import="java.util.List" %>
-<%@ page import="java.util.Date" %>
-<%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="com.example.final_module_3.entity.Room" %>
 <%@ page import="com.example.final_module_3.entity.PaymentType" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -17,7 +15,7 @@
     int currentPage = request.getParameter("page") != null ? Integer.parseInt(request.getParameter("page")) : 1;
 %>
 <!DOCTYPE html>
-<html lang="vi">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

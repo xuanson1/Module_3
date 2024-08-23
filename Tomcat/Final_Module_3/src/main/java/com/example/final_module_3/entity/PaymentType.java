@@ -4,18 +4,15 @@ public class PaymentType {
     private int paymentTypeId;
     private String paymentTypeName;
 
-    // Constructor with both ID and name
     public PaymentType(int paymentTypeId, String paymentTypeName) {
         this.paymentTypeId = paymentTypeId;
         this.paymentTypeName = paymentTypeName;
     }
 
-    // Constructor with name only
     public PaymentType(String paymentTypeName) {
         this.paymentTypeName = paymentTypeName;
     }
 
-    // Getters and setters
     public int getPaymentTypeId() {
         return paymentTypeId;
     }
